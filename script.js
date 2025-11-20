@@ -15,4 +15,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     typeText();
+
+    // Make any .project-card with a data-href navigable without turning it into an anchor
+    const navigableCards = document.querySelectorAll('.project-card[data-href]');
+    navigableCards.forEach(card => {
+        const href = card.getAttribute('data-href');
+        // Click → navigate
+        card.addEventListener('click', () => {
+            if (href) window.location.href = href;
+        });
+        // Keyboard accessibility: Enter or Space
+        card.addEventListener('keydown', (e) => {
+            if (!href) return;
+            const key = e.key || e.keyCode;
+            if (key === 'Enter' || key === ' ' || key === 13 || key === 32) {
+                e.preventDefault();
+                window.location.href = href;
+            }
+        });
+    });
 });

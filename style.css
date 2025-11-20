@@ -52,10 +52,16 @@ h2 {
 }
 
 .project-card {
+    display: block;
     background-color: #1c2a41;
     padding: 1.5rem;
     border-radius: 8px;
     transition: transform 0.2s ease;
+}
+
+/* Only show pointer cursor for cards that have a data-href (clickable) */
+.project-card[data-href] {
+    cursor: pointer;
 }
 
 .project-card:hover {
@@ -66,11 +72,19 @@ h2 {
     color: #ADFF2F;
     margin-top: 0;
     margin-bottom: 1rem;
+    text-decoration: none;
 }
 
 .project-card p {
     margin: 0;
     opacity: 0.9;
+    text-decoration: none;
+}
+
+/* Ensure any anchors inside a card (if present) don't look like default links */
+.project-card a {
+    color: inherit;
+    text-decoration: none;
 }
 
 /* Footer */
