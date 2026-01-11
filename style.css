@@ -1,7 +1,24 @@
+
+/* Variables de Color (Branding) */
+:root {
+  --color-primario: #7BF547;     /* Verde acido */
+  /* RGB del color primario para usar en rgba() (evita repetir el valor hexadecimal) */
+  --color-primario-rgb: 90,255,21;
+  /* RGB del color secundario (verde claro) */
+  --color-secundario-rgb: 224, 244, 215;
+  --color-fondo: #142a3e;        /* Azul oscuro */
+  --color-secundario: #e0f4d7;   /* Verde claro */
+  --color-texto: #eff0f1;        /* Plateado */
+  --color-texto-secundario: #B0C4DE; /* Un gris/azul claro */
+
+  --max-width: 1100px;
+  --radius: 12px;
+}
+
 /* Modern Responsive Theme */
 body {
-    background-color: #0b0f19;
-    color: #e0e0e0;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
     font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -10,17 +27,35 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #ADFF2F;
+    background-color: var(--color-primario);
     padding: 1rem 5%;
     margin-bottom: 2rem;
 }
 
 header h1 {
-    color: #0b0f19;
-    font-size: 2.5rem;
+    color: var(--color-fondo);
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0;
+}
+
+/* Header link (site brand) - keep visually plain and never underlined */
+.site-brand {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+}
+.site-brand h1 {
+    text-decoration: none;
+}
+.site-brand:hover,
+.site-brand:focus {
+    text-decoration: none;
+}
+.site-brand:focus {
+    outline: 3px solid rgba(var(--color-primario-rgb), 0.25);
+    outline-offset: 4px;
 }
 
 /* Content Sections */
@@ -31,7 +66,7 @@ header h1 {
 }
 
 h2 {
-    color: #ADFF2F;
+    color: var(--color-primario);
     margin-bottom: 1.5rem;
     font-size: 2rem;
 }
@@ -53,7 +88,7 @@ h2 {
 
 .project-card {
     display: block;
-    background-color: #1c2a41;
+    background-color: rgba(var(--color-secundario-rgb), 0.1);
     padding: 1.5rem;
     border-radius: 8px;
     transition: transform 0.2s ease;
@@ -69,7 +104,7 @@ h2 {
 }
 
 .project-card h3 {
-    color: #ADFF2F;
+    color: var(--color-primario);
     margin-top: 0;
     margin-bottom: 1rem;
     text-decoration: none;
@@ -87,12 +122,26 @@ h2 {
     text-decoration: none;
 }
 
+/* Back button for error pages */
+.back-btn {
+    display: inline-block;
+    background: var(--color-primario);
+    color: var(--color-fondo);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+}
+.back-btn:hover {
+    opacity: 0.95;
+}
+
 /* Footer */
 footer {
     text-align: center;
     padding: 2rem 5%;
     margin-top: 3rem;
-    border-top: 1px solid #1c2a41;
+    border-top: 1px solid var(--color-fondo);
 }
 
 /* Responsive Design */
