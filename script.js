@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Update year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     const introText = document.getElementById('intro-text');
     const text = introText.textContent;
     introText.textContent = '';

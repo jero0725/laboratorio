@@ -1,13 +1,13 @@
 
 /* Variables de Color (Branding) */
 :root {
-  --color-primario: #7BF547;     /* Verde acido */
+  --color-primario: #F16B28;     /* Naranja */
   /* RGB del color primario para usar en rgba() (evita repetir el valor hexadecimal) */
-  --color-primario-rgb: 90,255,21;
+  --color-primario-rgb: 241, 107, 40;
   /* RGB del color secundario (verde claro) */
-  --color-secundario-rgb: 224, 244, 215;
-  --color-fondo: #142a3e;        /* Azul oscuro */
-  --color-secundario: #e0f4d7;   /* Verde claro */
+  --color-secundario-rgb: 0, 191, 255;
+  --color-fondo: #0A1A2A;        /* Azul oscuro */
+  --color-secundario: #00BFFF;   /* Azul claro */
   --color-texto: #eff0f1;        /* Plateado */
   --color-texto-secundario: #B0C4DE; /* Un gris/azul claro */
 
@@ -17,8 +17,8 @@
 
 /* Modern Responsive Theme */
 body {
-    background-color: var(--color-fondo);
-    color: var(--color-texto);
+    background-color: var(--color-texto);
+    color: var(--color-fondo);
     font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -33,7 +33,7 @@ header {
 }
 
 header h1 {
-    color: var(--color-fondo);
+    color: var(--color-texto);
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -88,7 +88,7 @@ h2 {
 
 .project-card {
     display: block;
-    background-color: rgba(var(--color-secundario-rgb), 0.1);
+    background-color: rgba(var(--color-primario-rgb), 0.1);
     padding: 1.5rem;
     border-radius: 8px;
     transition: transform 0.2s ease;
